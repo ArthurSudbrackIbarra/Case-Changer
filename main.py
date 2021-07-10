@@ -57,7 +57,7 @@ if device_index == -1:
     jsonFile.write(jsonString)
     jsonFile.close()
 else:
-    mic = speech_recognition.Microphone(device_index=config_data['device_index'])
+    mic = speech_recognition.Microphone(device_index=device_index)
 
 print('\nNow listening!\n')
 
