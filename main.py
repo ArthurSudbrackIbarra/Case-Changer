@@ -36,16 +36,16 @@ if device_index == -1:
     mic_list = speech_recognition.Microphone.list_microphone_names()
     for i, val in enumerate(mic_list):
         print(f'[{i + 1}] - {val}')
-    device_index = input('\nYour choice (1 for 1st microphone, 2 for 2nd microphone...): ')
+    str_device_index = input('\nYour choice (1 for 1st microphone, 2 for 2nd microphone...): ')
     while True:
-        if device_index.isnumeric():
+        if str_device_index.isnumeric():
             numeric_device_index = int(device_index)
             if 0 < numeric_device_index < len(mic_list):
                 break
             else:
-                device_index = input('Invalid option, try again: ')
+                str_device_index = input('Invalid option, try again: ')
         else:
-            device_index = input('Invalid option, try again: ')
+            str_device_index = input('Invalid option, try again: ')
     mic = speech_recognition.Microphone(device_index=numeric_device_index)
     language_option = input('\nNow choose your language, 1 for english and 2 for portuguese: ')
     if language_option == '1':
@@ -71,7 +71,12 @@ if device_index == -1:
         jsonFile.close()
 
 else:
-    mic = speech_recognition.Microphone(device_index=device_index)
+    try:
+        mic = speech_recognition.Microphone(device_index=int(device_index))
+    except ValueError:
+        print('There was an error with config.json file, download it again at:')
+        print('https://github.com/ArthurSudbrackIbarra/Case-Changer')
+        exit(1)
 
 print('\nNow listening!\n')
 
