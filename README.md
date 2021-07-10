@@ -23,7 +23,7 @@ NOTE: Case Changer works only on Windows!
 - LOWERCASE: lowercase (en) | minúsculo (pt)
 - TITLECASE: title (en) | título (pt)
 
-#### Demonstration:
+#### Demonstration (Video):
 
 <a href="https://www.youtube.com/watch?v=hUE3wNpmA1E" title="Demonstration" target="_blank">
     <img src="README-Images/demonstration.png" alt="Demonstration Image"/>
