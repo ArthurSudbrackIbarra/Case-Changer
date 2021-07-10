@@ -33,9 +33,20 @@ titlecase_command = config_data['titlecase_command']
 
 if device_index == -1:
     print('You first need to choose which microphone you\'re going to use:\n')
-    print(f'{speech_recognition.Microphone.list_microphone_names()}\n')
-    device_index = int(input('Your choice (1 for 1st microphone, 2 for 2nd microphone...): ')) - 1
-    mic = speech_recognition.Microphone(device_index=device_index)
+    mic_list = speech_recognition.Microphone.list_microphone_names()
+    for i, val in enumerate(mic_list):
+        print(f'[{i + 1}] - {val}')
+    device_index = input('\nYour choice (1 for 1st microphone, 2 for 2nd microphone...): ')
+    while True:
+        if device_index.isnumeric():
+            numeric_device_index = int(device_index)
+            if 0 < numeric_device_index < len(mic_list):
+                break
+            else:
+                device_index = input('Invalid option, try again: ')
+        else:
+            device_index = input('Invalid option, try again: ')
+    mic = speech_recognition.Microphone(device_index=numeric_device_index)
     language_option = input('\nNow choose your language, 1 for english and 2 for portuguese: ')
     if language_option == '1':
         language = 'en-US'
