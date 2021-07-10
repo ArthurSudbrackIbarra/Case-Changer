@@ -5,6 +5,7 @@ import pyperclip
 
 
 def change_case(option):
+    current_clipboard_content = pyperclip.paste()
     pyautogui.hotkey('ctrl', 'c')
     pyautogui.press('backspace')
     if option == 1:
@@ -15,6 +16,7 @@ def change_case(option):
         new_text = pyperclip.paste().title()
     pyperclip.copy(new_text)
     pyautogui.hotkey('ctrl', 'v')
+    pyperclip.copy(current_clipboard_content)
 
 
 recognizer = speech_recognition.Recognizer()
@@ -53,9 +55,10 @@ if device_index == -1:
         'titlecase_command': titlecase_command
     }
     jsonString = json.dumps(to_save)
-    jsonFile = open("config.json", "w")
-    jsonFile.write(jsonString)
-    jsonFile.close()
+    with open('config.json', 'wb') as jsonFile:
+        jsonFile.write(jsonString.encode('utf-8'))
+        jsonFile.close()
+
 else:
     mic = speech_recognition.Microphone(device_index=device_index)
 
