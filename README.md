@@ -22,3 +22,9 @@ NOTE: Case Changer works only on Windows!
 - UPPERCASE: uppercase (en) | maiúsculo (pt)
 - LOWERCASE: lowercase (en) | minúsculo (pt)
 - TITLECASE: title (en) | título (pt)
+
+#### Demonstration:
+
+<a href="https://www.youtube.com/watch?v=hUE3wNpmA1E" title="Demonstration">
+    <img src="README-Images/demonstration.png" alt="Demonstration Image"/>
+</a>
