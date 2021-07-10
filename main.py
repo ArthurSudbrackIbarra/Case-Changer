@@ -29,7 +29,7 @@ uppercase_command = config_data['uppercase_command']
 lowercase_command = config_data['lowercase_command']
 titlecase_command = config_data['titlecase_command']
 
-if config_data['device_index'] == -1:
+if device_index == -1:
     print('You first need to choose which microphone you\'re going to use:\n')
     print(f'{speech_recognition.Microphone.list_microphone_names()}\n')
     device_index = int(input('Your choice (1 for 1st microphone, 2 for 2nd microphone...): ')) - 1
