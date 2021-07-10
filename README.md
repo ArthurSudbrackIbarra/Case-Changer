@@ -17,7 +17,7 @@ NOTE: Case Changer works only on Windows!
 - English (USA)
 - Portuguese (Brazil)
 
-#### Commands
+#### Commands:
 
 - UPPERCASE: uppercase (en) | maiúsculo (pt)
 - LOWERCASE: lowercase (en) | minúsculo (pt)
