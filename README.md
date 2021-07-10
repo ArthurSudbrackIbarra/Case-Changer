@@ -25,6 +25,6 @@ NOTE: Case Changer works only on Windows!
 
 #### Demonstration:
 
-<a href="https://www.youtube.com/watch?v=hUE3wNpmA1E" title="Demonstration">
+<a href="https://www.youtube.com/watch?v=hUE3wNpmA1E" title="Demonstration" target="_blank">
     <img src="README-Images/demonstration.png" alt="Demonstration Image"/>
 </a>
