@@ -49,7 +49,7 @@ if device_index == -1:
     str_device_index = input('\nYour choice (1 for 1st microphone, 2 for 2nd microphone...): ')
     while True:
         if str_device_index.isnumeric():
-            numeric_device_index = int(device_index) - 1
+            numeric_device_index = int(str_device_index) - 1
             if 0 < numeric_device_index < len(mic_list):
                 break
             else:
@@ -71,7 +71,7 @@ if device_index == -1:
         titlecase_command = 'título'
     # Saving configurations to config.json
     to_save = {
-        'device_index': device_index,
+        'device_index': numeric_device_index,
         'language': language,
         'uppercase_command': uppercase_command,
         'lowercase_command': lowercase_command,
