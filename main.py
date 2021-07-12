@@ -35,6 +35,7 @@ config_data = json.load(config_file)
 
 device_index = config_data['device_index']
 language = config_data['language']
+uppercase_command = config_data['uppercase_command']
 lowercase_command = config_data['lowercase_command']
 titlecase_command = config_data['titlecase_command']
 
